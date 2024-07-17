@@ -39,5 +39,16 @@ public class GenericActionObject {
         return By.xpath("//button[text()='"+btn+"'] | //a[text()='"+btn+"'] | //input[@value='"+btn+"']");
     }
 
+    public By productItem(String itemName){
+
+        return By.xpath("(//*[text()= '"+itemName+"']/following::*[text()='Add to cart'])[1]");
+
+    }
+
+    public  By text(String txt){
+
+        return  By.xpath("//*[text()='"+txt+"']");
+    }
+
 
 }

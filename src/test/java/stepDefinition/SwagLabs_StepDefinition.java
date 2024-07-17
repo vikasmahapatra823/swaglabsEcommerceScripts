@@ -7,6 +7,8 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 
+import java.util.List;
+
 public class SwagLabs_StepDefinition extends GenericAction {
 
     GenericAction genericAction = new GenericAction();
@@ -37,6 +39,7 @@ public class SwagLabs_StepDefinition extends GenericAction {
     @Then("Verify the product item is {string}")
     public void verifyTheProductItemIs(String item) {
         genericAction.verifyPageContent(item);
+
 
     }
 
@@ -92,5 +95,17 @@ public class SwagLabs_StepDefinition extends GenericAction {
     public void fillTheBelowData(DataTable dt) {
         genericAction.dataTable(dt);
 
+    }
+
+    @And("Add the Following Product into the Cart:")
+    public void addTheFollowingProductIntoTheCart(List<String> productNames){
+        genericAction.add_MultipleProduct_ToCart(productNames);
+
+    }
+
+    @And("Verify the text: {string}")
+    public void verifyTheText(String txt) {
+
+        genericAction.verify_txt(txt);
     }
 }

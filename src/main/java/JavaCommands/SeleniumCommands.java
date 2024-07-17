@@ -77,8 +77,9 @@ public class SeleniumCommands {
         }
     }
 
-    public void clickElement(By element) {
+    public String clickElement(By element) {
         getWebdriver().findElement(element).click();
+        return null;
     }
 
     public String getText(By element) {
@@ -116,6 +117,12 @@ public class SeleniumCommands {
         } catch (Exception exception) {
             System.out.println("Element couldn't be highlighted");
         }
+
+    }
+
+    public void verifyText(By element){
+
+
 
     }
 

@@ -23,11 +23,35 @@ Feature: Swags Lab Login functionality
       | First Name      | TestfN |
       | Last Name       | TestlN |
       | Zip/Postal Code | 23010  |
-    And Click on the "Continue" buttonā
+    And Click on the "Continue" button
     And Verify the Page Header is "Checkout: Overview"
     And Wait for "5" seconds
     And Click on the "Finish" button
+    And Verify the Page Header is "Checkout: Complete!"
+    And Verify the text: "Thank you for your order!"
+    And Verify the text: "Your order has been dispatched, and will arrive just as fast as the pony can get there!"
 
 
-
-ā
+  @Test_01
+  Scenario: Verify Adding Multiple Product Items into Cart
+    Given Navigate to the "SWAGS LABS" Ecommerce Website
+    And Login to the Ecommerce Website as "Standard User"
+    Then Verify the product item is "Sauce Labs Backpackaa"
+    And Add the Following Product into the Cart:
+      | Sauce Labs Backpack     |
+      | Sauce Labs Bike Light   |
+      | Sauce Labs Bolt T-Shirt |
+    And Click on the Shopping cart icon on the top right corner
+    And Click on the "Checkout" button
+    And Fill the below data
+      | Field Name      | Value  |
+      | First Name      | TestfN |
+      | Last Name       | TestlN |
+      | Zip/Postal Code | 23010  |
+    And Click on the "Continue" button
+    And Verify the Page Header is "Checkout: Overview"
+    And Wait for "5" seconds
+    And Click on the "Finish" button
+    And Verify the Page Header is "Checkout: Complete!"
+    And Verify the text: "Thank you for your order!"
+    And Verify the text: "Your order has been dispatched, and will arrive just as fast as the pony can get there!"

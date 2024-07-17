@@ -14,7 +14,7 @@ import org.testng.annotations.BeforeClass;
 
 @CucumberOptions(features = {"classpath:FeatureFiles/Swag_Labs_End_to_End_flow.feature"},
         glue = {"classpath:stepDefinition"},
-        tags = "@Test",
+        tags = "@Test_01",
         plugin = {"pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
         monochrome = true
 )
